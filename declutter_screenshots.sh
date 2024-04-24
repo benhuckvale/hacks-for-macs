@@ -44,12 +44,15 @@ for file in "$src_dir"/Screenshot*.png; do
             continue
         fi
 
+        # Extract month and force decimal interpretation by removing leading zero
+        month=$(echo "$month" | sed 's/^0*//')
+
         # Determine the quarter
-        if [[ "$month" -le 03 ]]; then
+        if [[ "$month" -le 3 ]]; then
             quarter="Q1"
-        elif [[ "$month" -le 06 ]]; then
+        elif [[ "$month" -le 6 ]]; then
             quarter="Q2"
-        elif [[ "$month" -le 09 ]]; then
+        elif [[ "$month" -le 9 ]]; then
             quarter="Q3"
         elif [[ "$month" -le 12 ]]; then
             quarter="Q4"
