@@ -14,8 +14,19 @@
 # from a specific time period, and may improve system performance by reducing
 # the number of items the WindowServer needs to manage directly on the Desktop.
 
-# Directory containing the screenshots
-src_dir="/Users/$USER/Desktop"
+# Check if a command line argument is provided and is a valid directory
+if [ -d "$1" ]; then
+    src_dir="$1"
+else
+    src_dir="/Users/$USER/Desktop"
+fi
+
+# Additional message for clarity in case of an invalid argument
+if [ "$#" -gt 0 ] && [ ! -d "$1" ]; then
+    echo "Provided directory $src_dir does not exist."
+    exit
+fi
+
 # Base directory for organized screenshots
 dest_base_dir="/Users/$USER/Desktop/Screenshots"
 
