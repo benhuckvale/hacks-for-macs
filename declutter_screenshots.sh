@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# Problem:
 # When you take a screenshot on a mac, by default it puts it straight into your
 # Desktop folder. After taking a lot of screenshots this can become quite
 # cluttered!
 #
+# Solution:
 # This script is designed to organize such screenshots stored on the Desktop
 # into directories categorized by year and quarter.  It processes files
 # matching the pattern 'Screenshot*.png', extracts the date from each filename,
